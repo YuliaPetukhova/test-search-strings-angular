@@ -7,34 +7,82 @@
     <nav class="menu">
       <ul class="menu-list">
         <li class="menu-item">
-          <img src="assets/images/link.png" alt="Logo">
+          <img src="assets/images/link.png" alt="link">
           <a href="">Ссылки</a>
         </li>
         <li class="menu-item">
-          <img src="assets/images/users.png" alt="Logo">
+          <img src="assets/images/users.png" alt="users">
           <a href="">Контакты</a>
         </li>
         <li class="menu-item">
-          <img src="assets/images/Union.png" alt="Logo">
+          <img src="assets/images/Union.png" alt="Union">
           <a href="">Теги</a>
         </li>
         <li class="menu-item">
-          <img src="assets/images/fav.png" alt="Logo">
+          <img src="assets/images/fav.png" alt="fav">
           <a href="">Избранное</a>
         </li>
         <li class="menu-item">
-          <img src="assets/images/history.png" alt="Logo">
+          <img src="assets/images/history.png" alt="history">
           <a href="">Посещения</a>
         </li>
       </ul>
 
       <div class="search-add">
         <div class="search">
-          <input matInput class="search-input">
-          <img src="assets/images/search.png" alt="Logo">
+          <form class="search-form-main">
+            <mat-form-field *ngIf="showSearch" class="search-input">
+
+              <div class="input-btn-block">
+                <input
+                  type="text"
+                  matInput
+                  [matAutocomplete]="auto"
+                  placeholder="Поисковый запрос"
+                  [formControl]="searchControl"
+                >
+                <button type="submit" class="search-btn">Найти</button>
+              </div>
+
+              <mat-autocomplete #auto="matAutocomplete">
+                <div class="form-search">
+                  <div class="history">
+                    <p>История</p>
+                    <p>кнопка</p>
+                    <p>приложение</p>
+                  </div>
+
+                  <div class="options">
+                    <mat-option>
+                      <mat-form-field class="input-name">
+                        <mat-label>Автор</mat-label>
+                        <input matInput placeholder=" Имя или должность">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                      </mat-form-field>
+                    </mat-option>
+
+                    <mat-option>
+                      <form>
+                        <mat-checkbox *ngFor="let filter of filters" [(ngModel)]="filter.checked">{{ filter.name }}
+                        </mat-checkbox>
+                      </form>
+                    </mat-option>
+                    <mat-option>
+                      <form class="only-checkbox">
+                        <div>Только</div>
+                        <mat-checkbox *ngFor="let filter of filtersOnly" [(ngModel)]="filter.checked">{{ filter.name }}
+                        </mat-checkbox>
+                      </form>
+                    </mat-option>
+                  </div>
+                </div>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+          <img (click)="toggleSearch()" *ngIf="showSearchIcon" src="assets/images/search.png" alt="search">
         </div>
         <div class="add-new">
-          <img src="assets/images/add.png" alt="Logo">
+          <img src="assets/images/add.png" alt="add">
         </div>
       </div>
     </nav>
@@ -50,108 +98,3 @@
   </div>
 </header>
 
-<mat-form-field class="example-full-width">
-  <input type="text" matInput [matAutocomplete]="auto" placeholder="Поисковый запрос" [formControl]="searchControl">
-
-  <mat-autocomplete #auto="matAutocomplete">
-    <div class="form-search">
-      <div class="history">
-        <p>История</p>
-        <p>кнопка</p>
-        <p>приложение</p>
-      </div>
-
-      <div class="options">
-        <mat-option>
-          <mat-form-field class="input-name">
-            <mat-label>Автор</mat-label>
-            <input matInput placeholder=" Имя или должность">
-          </mat-form-field>
-        </mat-option>
-
-        <mat-option>
-          <form>
-            <mat-checkbox *ngFor="let filter of filters" [(ngModel)]="filter.checked">{{ filter.name }}</mat-checkbox>
-          </form>
-        </mat-option>
-        <mat-option>
-          <form>
-            <div>Только</div>
-            <mat-checkbox *ngFor="let filter of filtersOnly" [(ngModel)]="filter.checked">{{ filter.name }}
-            </mat-checkbox>
-          </form>
-        </mat-option>
-      </div>
-    </div>
-  </mat-autocomplete>
-</mat-form-field>
-
-
-<!--<mat-accordion>-->
-<!--  <mat-expansion-panel hideToggle>-->
-<!--    <mat-expansion-panel-header>-->
-<!--      <mat-panel-title>История</mat-panel-title>-->
-<!--      <mat-panel-description> This is a summary of the content </mat-panel-description>-->
-<!--    </mat-expansion-panel-header>-->
-<!--    <p>This is the primary content of the panel.</p>-->
-<!--  </mat-expansion-panel>-->
-<!--  <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">-->
-<!--    <mat-expansion-panel-header>-->
-<!--      <mat-panel-title> Self aware panel </mat-panel-title>-->
-<!--      <mat-panel-description>-->
-<!--        Currently I am {{panelOpenState() ? 'open' : 'closed'}}-->
-<!--      </mat-panel-description>-->
-<!--    </mat-expansion-panel-header>-->
-<!--    <p>I'm visible because I am open</p>-->
-<!--  </mat-expansion-panel>-->
-<!--</mat-accordion>-->
-
-<!--<mat-form-field class="example-full-width">-->
-<!--  <input type="text" matInput [matAutocomplete]="auto" placeholder="Поисковый запрос" [formControl]="searchControl">-->
-
-<!--  <mat-autocomplete #auto="matAutocomplete">-->
-<!--    <div class="form-search">-->
-<!--      <div class="history">-->
-<!--        <p>История</p>-->
-<!--        <p>кнопка</p>-->
-<!--        <p>приложение</p>-->
-<!--      </div>-->
-
-<!--      <div class="options">-->
-<!--        <mat-expansion-panel>-->
-<!--          <mat-expansion-panel-header>-->
-<!--            <mat-panel-title>-->
-<!--              Автор-->
-<!--            </mat-panel-title>-->
-<!--          </mat-expansion-panel-header>-->
-<!--          <mat-form-field class="input-name">-->
-<!--            <mat-label>Автор</mat-label>-->
-<!--            <input matInput placeholder="Имя или должность">-->
-<!--          </mat-form-field>-->
-<!--        </mat-expansion-panel>-->
-
-<!--        <mat-expansion-panel>-->
-<!--          <mat-expansion-panel-header>-->
-<!--            <mat-panel-title>-->
-<!--              Фильтры-->
-<!--            </mat-panel-title>-->
-<!--          </mat-expansion-panel-header>-->
-<!--          <form>-->
-<!--            <mat-checkbox *ngFor="let filter of filters" [(ngModel)]="filter.checked">{{ filter.name }}</mat-checkbox>-->
-<!--          </form>-->
-<!--        </mat-expansion-panel>-->
-
-<!--        <mat-expansion-panel>-->
-<!--          <mat-expansion-panel-header>-->
-<!--            <mat-panel-title>-->
-<!--              Только-->
-<!--            </mat-panel-title>-->
-<!--          </mat-expansion-panel-header>-->
-<!--          <form>-->
-<!--            <mat-checkbox *ngFor="let filter of filtersOnly" [(ngModel)]="filter.checked">{{ filter.name }}</mat-checkbox>-->
-<!--          </form>-->
-<!--        </mat-expansion-panel>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </mat-autocomplete>-->
-<!--</mat-form-field>-->

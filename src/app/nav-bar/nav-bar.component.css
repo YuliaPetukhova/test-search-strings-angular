@@ -62,12 +62,22 @@ header {
   height: 40px;
 }
 
-.search-input {
+.search-form-main {
   outline: none;
-  display: none;
-  height: 40px;
-  width: 704px;
   cursor: pointer;
+  z-index: 1;
+  position: fixed;
+  right: 311px;
+}
+
+.form-search {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-input {
+  width: 704px;
+  padding-right: 12px;
 }
 
 .search img {
@@ -75,8 +85,20 @@ header {
   cursor: pointer;
 }
 
-.example-full-width {
-  width: 704px;
+.input-btn-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-btn {
+  background-color: #ffb700;
+  color: white;
+  border: #ffb700;
+  height: 50px;
+  width: 100px;
+  border: 1px solid #ffb700;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .add-new img {
@@ -100,11 +122,21 @@ header {
 
 .history {
   width: 216px;
-  padding: 0 16px;
 }
 
 .input-name {
-  width: 439px;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  width: 359px;
+}
+
+.only-checkbox {
+  padding-bottom: 24px;
+}
+
+
+.mat-mdc-option .mat-icon, .mat-mdc-option .mat-pseudo-checkbox-full {
+  margin-right: 0;
+  flex-shrink: 0;
 }
