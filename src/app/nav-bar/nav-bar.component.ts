@@ -1,48 +1,30 @@
-import {Component, OnInit, signal} from '@angular/core';
-import {MatFormField, MatFormFieldModule, MatLabel} from "@angular/material/form-field";
-import {MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbar} from "@angular/material/toolbar";
-import {AsyncPipe, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
+import {Component, ElementRef, OnInit, signal, ViewChild} from '@angular/core';
+import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
+import {NgForOf, NgIf} from "@angular/common";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {map, Observable, startWith} from "rxjs";
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {
-  MatAutocomplete,
-  MatAutocompleteModule,
-  MatAutocompleteTrigger,
-  MatOption
-} from "@angular/material/autocomplete";
+import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/material/autocomplete";
 import {MatCheckbox} from "@angular/material/checkbox";
-import {MatSelect} from "@angular/material/select";
 import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
   imports: [
-    MatLabel,
     MatFormField,
-    MatMenuModule,
-    MatMenuTrigger,
-    MatButtonModule,
-    MatToolbar,
-    NgOptimizedImage,
-    MatInput,
+    MatAutocompleteTrigger,
+    ReactiveFormsModule,
     MatAutocomplete,
+    MatIcon,
+    MatCheckbox,
     MatOption,
     FormsModule,
-    MatAutocompleteTrigger,
-    MatCheckbox,
     NgForOf,
-    AsyncPipe,
-    ReactiveFormsModule,
-    MatSelect,
-    MatIcon,
-    MatFormFieldModule,
-    MatInputModule,
-    MatAutocompleteModule,
     NgIf,
+    MatFormFieldModule,
+    MatInput,
+    MatInputModule,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'

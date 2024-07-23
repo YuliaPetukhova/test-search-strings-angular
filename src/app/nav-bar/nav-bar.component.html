@@ -40,6 +40,7 @@
                   [matAutocomplete]="auto"
                   placeholder="Поисковый запрос"
                   [formControl]="searchControl"
+                  name="text"
                 >
                 <button type="submit" class="search-btn">Найти</button>
               </div>
@@ -53,20 +54,18 @@
                   </div>
 
                   <div class="options">
-                    <mat-option>
-                      <mat-form-field class="input-name">
-                        <mat-label>Автор</mat-label>
-                        <input matInput placeholder=" Имя или должность">
-                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                      </mat-form-field>
-                    </mat-option>
+                    <mat-form-field class="input-name">
+                      <mat-label>Автор</mat-label>
+                      <input matInput placeholder=" Имя или должность" name="user"
+                      >
+                      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
 
-                    <mat-option>
-                      <form>
-                        <mat-checkbox *ngFor="let filter of filters" [(ngModel)]="filter.checked">{{ filter.name }}
-                        </mat-checkbox>
-                      </form>
-                    </mat-option>
+                    <form>
+                      <mat-checkbox *ngFor="let filter of filters" [(ngModel)]="filter.checked">{{ filter.name }}
+                      </mat-checkbox>
+                    </form>
+
                     <mat-option>
                       <form class="only-checkbox">
                         <div>Только</div>
@@ -74,6 +73,7 @@
                         </mat-checkbox>
                       </form>
                     </mat-option>
+
                   </div>
                 </div>
               </mat-autocomplete>
@@ -81,6 +81,7 @@
           </form>
           <img (click)="toggleSearch()" *ngIf="showSearchIcon" src="assets/images/search.png" alt="search">
         </div>
+
         <div class="add-new">
           <img src="assets/images/add.png" alt="add">
         </div>
@@ -97,4 +98,3 @@
     </div>
   </div>
 </header>
-
