@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {NavBarComponent} from "./nav-bar/nav-bar.component";
+import {MatAccordion, MatExpansionPanel, MatExpansionPanelHeader} from "@angular/material/expansion";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavBarComponent, MatAccordion, MatExpansionPanel,MatExpansionPanelHeader],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
