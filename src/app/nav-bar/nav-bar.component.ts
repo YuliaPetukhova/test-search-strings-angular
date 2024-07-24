@@ -65,6 +65,7 @@ export class NavBarComponent implements OnInit {
   }
 
   toggleSearch() {
+    console.log('toggleSearch');
     this.showSearch = !this.showSearch;
     this.showSearchIcon = !this.showSearchIcon;
   }

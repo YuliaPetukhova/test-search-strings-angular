@@ -50,6 +50,7 @@ header {
   color: #fff;
 }
 
+
 .search-add {
   display: flex;
   align-items: center;
@@ -73,7 +74,27 @@ header {
   padding: 4px 0 0 0;
   right: auto;
   left: auto;
-  width: 750px;
+  /*width: 750px;*/
+}
+
+.search-input {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.5s ease;
+}
+
+.search-input.expanded {
+  width: 800px;
+}
+
+.input-btn-block {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.search-btn {
+  margin-left: 10px;
 }
 
 :host ::ng-deep .mdc-text-field {
@@ -84,34 +105,19 @@ header {
   padding: 0;
 }
 
-.form-search {
+.form-search-category {
   display: flex;
   justify-content: space-around;
 }
 
 .mat-mdc-form-field {
   padding: 0;
-  width: 704px;
+  /*width: 704px;*/
 }
 
 .search img {
   padding: 0 16px;
   cursor: pointer;
-}
-
-.input-btn-block {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  flex-wrap: nowrap;
-  justify-content: center;
-  padding-left: 10px;
-}
-
-.input-btn-block input {
-  outline: none;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .search-btn {
@@ -122,6 +128,10 @@ header {
   width: 100px;
   font-size: 20px;
   cursor: pointer;
+}
+
+.add-new {
+  padding-left: 16px;
 }
 
 .add-new img {
@@ -139,12 +149,33 @@ header {
   cursor: pointer;
 }
 
-.form-search {
+.form-search-category {
   display: flex;
+  width: max-content;
+  margin: 0;
+  position: relative;
 }
 
 .history {
   width: 216px;
+  height: 200px;
+  padding: 0 16px;
+  overflow-y: auto;
+}
+
+.history p {
+  margin: 8px 0;
+}
+
+.form-search-category:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 432px);
+  height: 25%;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.98));
+  pointer-events: none;
 }
 
 .input-name {
@@ -160,4 +191,20 @@ header {
 
 .hidden-option {
   display: none;
+}
+
+.mdc-checkbox__background {
+}
+
+:host ::ng-deep .mdc-checkbox {
+  border-color: #7F878C;
+}
+
+:host ::ng-deep div.mat-mdc-autocomplete-panel {
+  padding: 0;
+}
+
+
+.options {
+  padding-left: 24px;
 }

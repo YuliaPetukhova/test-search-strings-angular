@@ -30,9 +30,8 @@
 
       <div class="search-add">
         <div class="search">
-
           <form class="search-form-main">
-            <mat-form-field *ngIf="showSearch" class="search-input">
+            <mat-form-field class="search-input" [ngClass]="{'expanded': showSearch}">
               <div class="input-btn-block">
                 <input
                   type="text"
@@ -41,6 +40,7 @@
                   placeholder="Поисковый запрос"
                   [formControl]="searchControl"
                   name="text"
+                  (blur)="toggleSearch()"
                 >
                 <button type="submit" class="search-btn">Найти</button>
               </div>
@@ -50,11 +50,13 @@
               <mat-option *ngFor="let option of options" [value]="option" class="hidden-option">
                 {{ option }}
               </mat-option>
-              <div class="form-search">
+              <div class="form-search-category">
                 <div class="history">
                   <p>История</p>
                   <p>кнопка</p>
                   <p>приложение</p>
+                  <p>История</p>
+                  <p>кнопка</p>
                 </div>
 
                 <div class="options">
@@ -65,20 +67,22 @@
                   </mat-form-field>
 
                   <div>
-                    <mat-checkbox name="checkbox1" *ngFor="let filter of filters" [(ngModel)]="filter.checked">{{ filter.name }}
+                    <mat-checkbox name="checkbox1" *ngFor="let filter of filters"
+                                  [(ngModel)]="filter.checked">{{ filter.name }}
                     </mat-checkbox>
                   </div>
 
                   <div class="only-checkbox">
                     <div>Только</div>
-                    <mat-checkbox name="category" *ngFor="let filter of filtersOnly" [(ngModel)]="filter.checked">{{ filter.name }}
+                    <mat-checkbox name="category" *ngFor="let filter of filtersOnly"
+                                  [(ngModel)]="filter.checked">{{ filter.name }}
                     </mat-checkbox>
                   </div>
                 </div>
               </div>
             </mat-autocomplete>
           </form>
-          <img (click)="toggleSearch()" *ngIf="showSearchIcon" src="assets/images/search.png" alt="Поиск">
+          <img (click)="toggleSearch()" src="assets/images/search.png" alt="Поиск">
         </div>
 
         <div class="add-new">
