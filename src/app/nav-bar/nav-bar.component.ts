@@ -1,12 +1,13 @@
-import {Component, ElementRef, OnInit, signal, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
-import {NgForOf, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {map, Observable, startWith} from "rxjs";
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/material/autocomplete";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {MatIcon} from "@angular/material/icon";
+import {MatSelect} from "@angular/material/select";
 
 @Component({
   selector: 'app-nav-bar',
@@ -25,9 +26,11 @@ import {MatIcon} from "@angular/material/icon";
     MatFormFieldModule,
     MatInput,
     MatInputModule,
+    NgClass,
+    MatSelect,
   ],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+  styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent implements OnInit {
   options: string[] = ['One', 'Two', 'Three'];
@@ -50,22 +53,20 @@ export class NavBarComponent implements OnInit {
   showSearch = false;
   showSearchIcon = true;
 
-  toggleSearch() {
-    this.showSearch = !this.showSearch;
-    this.showSearchIcon = !this.showSearchIcon;
-  }
-
   constructor() {
     this.filteredOptions = new Observable<string[]>();
   }
-
-  readonly panelOpenState = signal(false);
 
   ngOnInit() {
     this.filteredOptions = this.searchControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
+  }
+
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
+    this.showSearchIcon = !this.showSearchIcon;
   }
 
   private _filter(value: string): string[] {
