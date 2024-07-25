@@ -8,6 +8,8 @@ import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/mater
 import {MatCheckbox} from "@angular/material/checkbox";
 import {MatIcon} from "@angular/material/icon";
 import {MatSelect} from "@angular/material/select";
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
 
 @Component({
   selector: 'app-nav-bar',
@@ -28,6 +30,9 @@ import {MatSelect} from "@angular/material/select";
     MatInputModule,
     NgClass,
     MatSelect,
+    MatBadgeModule,
+    MatMenu,
+    MatMenuTrigger
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
@@ -37,9 +42,9 @@ export class NavBarComponent implements OnInit {
   searchControl = new FormControl();
 
   filters = [
-    {name: 'я участник', checked: false},
-    {name: 'строгий поиск', checked: false},
-    {name: 'в заголовках', checked: false},
+    {name: 'Я участник', checked: false},
+    {name: 'Строгий поиск', checked: false},
+    {name: 'В заголовках', checked: false},
   ];
 
   filtersOnly = [
@@ -48,30 +53,38 @@ export class NavBarComponent implements OnInit {
     {name: 'контакты', checked: false},
   ];
 
+  wordsSearch = [
+    {wordName: 'приложение'},
+    {wordName: 'кнопка'},
+    {wordName: 'кнопка-приложение'},
+    {wordName: 'приложение'},
+    {wordName: 'кнопка'},
+    {wordName: 'кнопка-приложение'},
+  ];
+
   filteredOptions!: Observable<string[]>;
 
-  showSearch = false;
-  showSearchIcon = true;
+  showSearch: boolean = false;
+  showSearchIcon: boolean = true;
 
   constructor() {
     this.filteredOptions = new Observable<string[]>();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.filteredOptions = this.searchControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
   }
 
-  toggleSearch() {
-    console.log('toggleSearch');
+  toggleSearch(): void {
     this.showSearch = !this.showSearch;
     this.showSearchIcon = !this.showSearchIcon;
   }
 
   private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+    const filterValue: string = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 }

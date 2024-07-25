@@ -1,30 +1,34 @@
 <header>
   <div class="container">
+
     <div class="logo">
+      <div class="menu-mobile">
+        <mat-icon>menu</mat-icon>
+      </div>
       <img src="assets/images/Logo.png" alt="Logo">
     </div>
 
     <nav class="menu">
       <ul class="menu-list">
-        <li class="menu-item">
+        <li class="menu-item desktop-only">
           <img src="assets/images/link.png" alt="link">
-          <a href="">Ссылки</a>
+          <a href="#">Ссылки</a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item desktop-only">
           <img src="assets/images/users.png" alt="users">
-          <a href="">Контакты</a>
+          <a href="#">Контакты</a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item desktop-only">
           <img src="assets/images/Union.png" alt="Union">
-          <a href="">Теги</a>
+          <a href="#">Теги</a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item desktop-only">
           <img src="assets/images/fav.png" alt="fav">
-          <a href="">Избранное</a>
+          <a href="#">Избранное</a>
         </li>
         <li class="menu-item">
           <img src="assets/images/history.png" alt="history">
-          <a href="">Посещения</a>
+          <a href="#" class="desktop-only">Посещения</a>
         </li>
       </ul>
 
@@ -46,23 +50,20 @@
               </div>
             </mat-form-field>
 
-            <mat-autocomplete #auto="matAutocomplete">
+            <mat-autocomplete #auto="matAutocomplete" class="toggle-form">
               <mat-option *ngFor="let option of options" [value]="option" class="hidden-option">
                 {{ option }}
               </mat-option>
               <div class="form-search-category">
                 <div class="history">
-                  <p>История</p>
-                  <p>кнопка</p>
-                  <p>приложение</p>
-                  <p>История</p>
-                  <p>кнопка</p>
+                  <p class="title-history">История</p>
+                  <div class="title-search" *ngFor="let word of wordsSearch">{{ word.wordName }}</div>
                 </div>
 
                 <div class="options">
                   <mat-form-field class="input-name">
-                    <mat-label>Автор</mat-label>
-                    <input matInput placeholder=" Имя или должность" name="user">
+                    <mat-label class="author">Автор</mat-label>
+                    <input matInput class="input-name-job-title" placeholder="Имя или должность" name="user">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                   </mat-form-field>
 
@@ -73,7 +74,7 @@
                   </div>
 
                   <div class="only-checkbox">
-                    <div>Только</div>
+                    <div class="only-title">Только</div>
                     <mat-checkbox name="category" *ngFor="let filter of filtersOnly"
                                   [(ngModel)]="filter.checked">{{ filter.name }}
                     </mat-checkbox>
@@ -88,14 +89,24 @@
         <div class="add-new">
           <img src="assets/images/add.png" alt="add">
         </div>
+
+        <div class="notification-mobile">
+          <mat-icon matBadge="32" class="custom-badge">
+            <img src="assets/images/notification.png" alt="notification">
+          </mat-icon>
+        </div>
+
       </div>
     </nav>
 
     <div class="right">
-      <div class="notification">
-        <img src="assets/images/notification.png" alt="Logo">
+      <div class="notification desktop-only">
+        <mat-icon matBadge="32" class="custom-badge">
+          <img src="assets/images/notification.png" alt="notification">
+        </mat-icon>
       </div>
-      <div class="user">
+
+      <div class="user desktop-only">
         <img src="assets/images/AVA.png" alt="Logo">
       </div>
     </div>
