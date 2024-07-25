@@ -31,6 +31,7 @@ header {
 .menu {
   margin-left: 0;
   display: flex;
+  align-items: center;
 }
 
 .menu-list {
@@ -52,7 +53,7 @@ header {
 }
 
 .menu-item a {
-  ont-size: 14px;
+  font-size: 14px;
   text-decoration: none;
   cursor: pointer;
   color: #fff;
@@ -83,8 +84,7 @@ header {
   position: fixed;
   margin: 0;
   padding: 19px 0 0 0;
-  right: auto;
-  left: auto;
+  right: 416px;
 }
 
 .search-input {
@@ -163,6 +163,7 @@ header {
   width: max-content;
   margin: 0;
   position: relative;
+  background-color: #ffffff;
 }
 
 .history {
@@ -227,6 +228,7 @@ header {
 ::ng-deep .mat-mdc-autocomplete-panel {
   padding: 0 !important;
   border-radius: 4px !important;
+  background-color: #ffffff !important;
 }
 
 .title-history {
@@ -269,6 +271,13 @@ header {
   border-radius: 4px;
 }
 
+.arrow-back {
+  display: none;
+}
+
+:host ::ng-deep .mdc-text-field--no-label .mat-mdc-form-field-infix {
+  background-color: #ffffff;
+}
 
 @media screen and (max-width: 414px) {
   .container {
@@ -326,6 +335,28 @@ header {
     padding: 0;
   }
 
+  .search-input.expanded {
+    width: 412px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0 16px 4px 0;
+  }
+
+  .options {
+    padding: 24px 16px 0 16px;
+  }
+
+  .mat-mdc-checkbox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-name {
+    width: 382px;
+  }
+
   .menu-mobile {
     display: flex;
     color: white;
@@ -340,6 +371,27 @@ header {
 
   .notification-mobile {
     display: block;
+  }
+
+  .arrow-back {
+    display: block;
+    padding: 16px 12px 16px 0;
+  }
+
+  :host ::ng-deep .mdc-text-field--no-label .mat-mdc-form-field-infix {
+    background-color: #F5F5F5;
+  }
+
+  .form-search-category {
+    background-color: #F5F5F5;
+  }
+
+  .mat-mdc-form-field {
+    background-color: #F5F5F5;
+  }
+
+  ::ng-deep div.mat-mdc-autocomplete-panel {
+    max-height: 500px !important;
   }
 }
 
