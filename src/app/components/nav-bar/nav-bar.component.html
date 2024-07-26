@@ -12,32 +12,32 @@
       <ul class="menu-list">
         <li class="menu-item desktop-only">
           <img src="assets/images/link.png" alt="link">
-          <a href="#">Ссылки</a>
+          <p>Ссылки</p>
         </li>
         <li class="menu-item desktop-only">
           <img src="assets/images/users.png" alt="users">
-          <a href="#">Контакты</a>
+          <p>Контакты</p>
         </li>
         <li class="menu-item desktop-only">
           <img src="assets/images/Union.png" alt="Union">
-          <a href="#">Теги</a>
+          <p>Теги</p>
         </li>
         <li class="menu-item desktop-only">
           <img src="assets/images/fav.png" alt="fav">
-          <a href="#">Избранное</a>
+          <p>Избранное</p>
         </li>
         <li class="menu-item">
           <img src="assets/images/history.png" alt="history">
-          <a href="#" class="desktop-only">Посещения</a>
+          <p class="desktop-only">Посещения</p>
         </li>
       </ul>
 
-      <div class="search-add">
+      <div class="search-add" appFocus (clickOutside)="closeSearch()">
         <form class="search-form-main">
-          <div class="search">
+          <div class="search" >
             <mat-form-field class="search-input" [ngClass]="{'expanded': showSearch}">
               <div class="input-btn-block">
-                <mat-icon class="arrow-back desktop-only">arrow_back</mat-icon>
+                <mat-icon class="arrow-back desktop-only cancel-search-btn">arrow_back</mat-icon>
 
                 <input
                   type="text"
@@ -46,20 +46,23 @@
                   placeholder="Поисковый запрос"
                   [formControl]="searchControl"
                   name="text"
-                  (blur)="toggleSearch()"
                 >
-                <button type="submit" class="search-btn desktop-only">Найти</button>
-                <button class="cancel-search-btn desktop-only">
-                  <mat-icon class="cancel-search desktop-only">cancel</mat-icon>
+                <button type="button" class="cancel-search-btn desktop-only">
+                  <mat-icon class="cancel-search cancel-search-btn desktop-only">cancel</mat-icon>
                 </button>
+                <button type="submit" class="search-btn desktop-only">Найти</button>
               </div>
 
             </mat-form-field>
 
             <mat-autocomplete #auto="matAutocomplete" class="toggle-form">
-              <mat-option *ngFor="let option of options" [value]="option" class="hidden-option">
+              <mat-option
+                *ngFor="let option of options"
+                [value]="option"
+                class="hidden-option">
                 {{ option }}
               </mat-option>
+
               <div class="form-search-category">
                 <div class="history desktop-only">
                   <p class="title-history">История</p>
@@ -92,9 +95,10 @@
                 </div>
               </div>
             </mat-autocomplete>
+
           </div>
         </form>
-        <img (click)="toggleSearch()" src="assets/images/search.png" alt="Поиск">
+        <img (click)="toggleSearch()" class="search-img" src="assets/images/search.png" alt="Поиск">
       </div>
 
       <div class="add-new">

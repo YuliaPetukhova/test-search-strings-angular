@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {MatInput, MatInputModule} from "@angular/material/input";
@@ -10,6 +10,8 @@ import {MatIcon} from "@angular/material/icon";
 import {MatSelect} from "@angular/material/select";
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
+import {FocusDirective} from "../../directives/focus.directive";
+import {trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-nav-bar',
@@ -32,12 +34,14 @@ import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
     MatSelect,
     MatBadgeModule,
     MatMenu,
-    MatMenuTrigger
+    MatMenuTrigger,
+    FocusDirective,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent implements OnInit {
+
   options: string[] = ['One', 'Two', 'Three'];
   searchControl = new FormControl();
 
@@ -81,6 +85,10 @@ export class NavBarComponent implements OnInit {
   toggleSearch(): void {
     this.showSearch = !this.showSearch;
     this.showSearchIcon = !this.showSearchIcon;
+  }
+
+  closeSearch(): void {
+    this.showSearch = false;
   }
 
   private _filter(value: string): string[] {
