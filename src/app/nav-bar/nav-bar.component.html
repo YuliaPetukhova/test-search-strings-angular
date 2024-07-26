@@ -49,7 +49,11 @@
                   (blur)="toggleSearch()"
                 >
                 <button type="submit" class="search-btn desktop-only">Найти</button>
+                <button class="cancel-search-btn desktop-only">
+                  <mat-icon class="cancel-search desktop-only">cancel</mat-icon>
+                </button>
               </div>
+
             </mat-form-field>
 
             <mat-autocomplete #auto="matAutocomplete" class="toggle-form">
