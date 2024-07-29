@@ -47,7 +47,7 @@
                   [formControl]="searchControl"
                   name="text"
                 >
-                <button type="button" class="cancel-search-btn desktop-only">
+                <button type="button" class="cancel-search-btn desktop-only" (click)="closeSearch()">
                   <mat-icon class="cancel-search cancel-search-btn desktop-only">cancel</mat-icon>
                 </button>
                 <button type="submit" class="search-btn desktop-only">Найти</button>

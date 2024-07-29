@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {MatInput, MatInputModule} from "@angular/material/input";
@@ -11,7 +11,6 @@ import {MatSelect} from "@angular/material/select";
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
 import {FocusDirective} from "../../directives/focus.directive";
-import {trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-nav-bar',
@@ -41,6 +40,7 @@ import {trigger} from "@angular/animations";
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent implements OnInit {
+  @ViewChild(MatAutocompleteTrigger) autocomplete!: MatAutocompleteTrigger;
 
   options: string[] = ['One', 'Two', 'Three'];
   searchControl = new FormControl();
@@ -89,6 +89,7 @@ export class NavBarComponent implements OnInit {
 
   closeSearch(): void {
     this.showSearch = false;
+    this.autocomplete.closePanel();
   }
 
   private _filter(value: string): string[] {
