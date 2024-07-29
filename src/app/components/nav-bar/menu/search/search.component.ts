@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {FocusDirective} from "../../directives/focus.directive";
+import {FocusDirective} from "../../../../directives/focus.directive";
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/material/autocomplete";
 import {MatCheckbox} from "@angular/material/checkbox";

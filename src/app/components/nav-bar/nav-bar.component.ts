@@ -11,14 +11,14 @@ import {MatSelect} from "@angular/material/select";
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
 import {FocusDirective} from "../../directives/focus.directive";
-import {LogoComponent} from "../logo/logo.component";
-import {NotificationIconComponent} from "../notification-icon/notification-icon.component";
-import {UserNotificationsComponent} from "../user-notifications/user-notifications.component";
-import {AddIconComponent} from "../add-icon/add-icon.component";
-import {MenuListComponent} from "../menu-list/menu-list.component";
-import {SearchComponent} from "../search/search.component";
-import {NotificationMobileComponent} from "../notification-mobile/notification-mobile.component";
-import {MenuComponent} from "../menu/menu.component";
+import {LogoComponent} from "./logo/logo.component";
+import {NotificationIconComponent} from "./user-notifications/notification-icon/notification-icon.component";
+import {UserNotificationsComponent} from "./user-notifications/user-notifications.component";
+import {AddIconComponent} from "./menu/add-icon/add-icon.component";
+import {MenuListComponent} from "./menu/menu-list/menu-list.component";
+import {SearchComponent} from "./menu/search/search.component";
+import {NotificationMobileComponent} from "./menu/notification-mobile/notification-mobile.component";
+import {MenuComponent} from "./menu/menu.component";
 
 @Component({
   selector: 'app-nav-bar',

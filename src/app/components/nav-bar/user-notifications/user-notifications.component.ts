@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NotificationIconComponent} from "../notification-icon/notification-icon.component";
+import {NotificationIconComponent} from "./notification-icon/notification-icon.component";
 
 @Component({
   selector: 'app-user-notifications',

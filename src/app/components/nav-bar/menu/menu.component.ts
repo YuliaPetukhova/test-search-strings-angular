@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {AddIconComponent} from "../add-icon/add-icon.component";
-import {MenuListComponent} from "../menu-list/menu-list.component";
-import {NotificationMobileComponent} from "../notification-mobile/notification-mobile.component";
-import {SearchComponent} from "../search/search.component";
+import {AddIconComponent} from "./add-icon/add-icon.component";
+import {MenuListComponent} from "./menu-list/menu-list.component";
+import {NotificationMobileComponent} from "./notification-mobile/notification-mobile.component";
+import {SearchComponent} from "./search/search.component";
 
 @Component({
   selector: 'app-menu',
