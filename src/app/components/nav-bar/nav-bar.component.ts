@@ -16,6 +16,9 @@ import {NotificationIconComponent} from "../notification-icon/notification-icon.
 import {UserNotificationsComponent} from "../user-notifications/user-notifications.component";
 import {AddIconComponent} from "../add-icon/add-icon.component";
 import {MenuListComponent} from "../menu-list/menu-list.component";
+import {SearchComponent} from "../search/search.component";
+import {NotificationMobileComponent} from "../notification-mobile/notification-mobile.component";
+import {MenuComponent} from "../menu/menu.component";
 
 @Component({
   selector: 'app-nav-bar',
@@ -45,65 +48,68 @@ import {MenuListComponent} from "../menu-list/menu-list.component";
     UserNotificationsComponent,
     AddIconComponent,
     MenuListComponent,
+    SearchComponent,
+    NotificationMobileComponent,
+    MenuComponent,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })
-export class NavBarComponent implements OnInit {
-  @ViewChild(MatAutocompleteTrigger) autocomplete!: MatAutocompleteTrigger;
-
-  options: string[] = ['One', 'Two', 'Three'];
-  searchControl = new FormControl();
-
-  filters = [
-    {name: 'Я участник', checked: false},
-    {name: 'Строгий поиск', checked: false},
-    {name: 'В заголовках', checked: false},
-  ];
-
-  filtersOnly = [
-    {name: 'теги', checked: false},
-    {name: 'просьбы', checked: false},
-    {name: 'контакты', checked: false},
-  ];
-
-  wordsSearch = [
-    {wordName: 'приложение'},
-    {wordName: 'кнопка'},
-    {wordName: 'кнопка-приложение'},
-    {wordName: 'приложение'},
-    {wordName: 'кнопка'},
-    {wordName: 'кнопка-приложение'},
-  ];
-
-  filteredOptions!: Observable<string[]>;
-
-  showSearch: boolean = false;
-  showSearchIcon: boolean = true;
-
-  constructor() {
-    this.filteredOptions = new Observable<string[]>();
-  }
-
-  ngOnInit(): void {
-    this.filteredOptions = this.searchControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
-  }
-
-  toggleSearch(): void {
-    this.showSearch = !this.showSearch;
-    this.showSearchIcon = !this.showSearchIcon;
-  }
-
-  closeSearch(): void {
-    this.showSearch = false;
-    this.autocomplete.closePanel();
-  }
-
-  private _filter(value: string): string[] {
-    const filterValue: string = value.toLowerCase();
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
+export class NavBarComponent {
+  // @ViewChild(MatAutocompleteTrigger) autocomplete!: MatAutocompleteTrigger;
+  //
+  // options: string[] = ['One', 'Two', 'Three'];
+  // searchControl = new FormControl();
+  //
+  // filters = [
+  //   {name: 'Я участник', checked: false},
+  //   {name: 'Строгий поиск', checked: false},
+  //   {name: 'В заголовках', checked: false},
+  // ];
+  //
+  // filtersOnly = [
+  //   {name: 'теги', checked: false},
+  //   {name: 'просьбы', checked: false},
+  //   {name: 'контакты', checked: false},
+  // ];
+  //
+  // wordsSearch = [
+  //   {wordName: 'приложение'},
+  //   {wordName: 'кнопка'},
+  //   {wordName: 'кнопка-приложение'},
+  //   {wordName: 'приложение'},
+  //   {wordName: 'кнопка'},
+  //   {wordName: 'кнопка-приложение'},
+  // ];
+  //
+  // filteredOptions!: Observable<string[]>;
+  //
+  // showSearch: boolean = false;
+  // showSearchIcon: boolean = true;
+  //
+  // constructor() {
+  //   this.filteredOptions = new Observable<string[]>();
+  // }
+  //
+  // ngOnInit(): void {
+  //   this.filteredOptions = this.searchControl.valueChanges.pipe(
+  //     startWith(''),
+  //     map(value => this._filter(value))
+  //   );
+  // }
+  //
+  // toggleSearch(): void {
+  //   this.showSearch = !this.showSearch;
+  //   this.showSearchIcon = !this.showSearchIcon;
+  // }
+  //
+  // closeSearch(): void {
+  //   this.showSearch = false;
+  //   this.autocomplete.closePanel();
+  // }
+  //
+  // private _filter(value: string): string[] {
+  //   const filterValue: string = value.toLowerCase();
+  //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  // }
 }
