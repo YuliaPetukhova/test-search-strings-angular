@@ -8,7 +8,6 @@ import {MatIcon} from "@angular/material/icon";
 import {MatInput} from "@angular/material/input";
 import {NgClass, NgForOf} from "@angular/common";
 import {map, Observable, startWith} from "rxjs";
-import {SearchInputComponent} from "./search-input/search-input.component";
 import {SearchCategoryComponent} from "./search-category/search-category.component";
 
 @Component({
@@ -29,7 +28,6 @@ import {SearchCategoryComponent} from "./search-category/search-category.compone
     NgForOf,
     ReactiveFormsModule,
     NgClass,
-    SearchInputComponent,
     SearchCategoryComponent
   ],
   templateUrl: './search.component.html',
