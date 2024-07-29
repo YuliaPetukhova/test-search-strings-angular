@@ -150,16 +150,16 @@ header {
   cursor: pointer;
 }
 
-.right {
-  display: flex;
-  align-items: center;
-  padding-right: 12px;
-}
+/*.right {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  padding-right: 12px;*/
+/*}*/
 
-.notification {
-  padding: 0 12px;
-  cursor: pointer;
-}
+/*.notification {*/
+/*  padding: 0 12px;*/
+/*  cursor: pointer;*/
+/*}*/
 
 .form-search-category {
   display: flex;
@@ -255,20 +255,20 @@ header {
   font-size: 14px;
 }
 
-.custom-badge {
-  position: relative;
-}
+/*.custom-badge {*/
+/*  position: relative;*/
+/*}*/
 
-:host ::ng-deep .mat-badge-content {
-  background-color: #CC1910;
-  color: white;
-  margin: 0;
-  padding: 0;
-}
+/*:host ::ng-deep .mat-badge-content {*/
+/*  background-color: #CC1910;*/
+/*  color: white;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
 
-.user {
-  padding-left: 12px;
-}
+/*.user {*/
+/*  padding-left: 12px;*/
+/*}*/
 
 :host ::ng-deep .mat-mdc-text-field-wrapper {
   border-radius: 4px;
@@ -383,9 +383,9 @@ header {
     padding-right: 16px;
   }
 
-  .right {
-    padding: 0;
-  }
+  /*.right {*/
+  /*  padding: 0;*/
+  /*}*/
 
   .notification-mobile {
     display: block;

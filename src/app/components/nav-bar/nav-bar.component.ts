@@ -13,6 +13,7 @@ import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
 import {FocusDirective} from "../../directives/focus.directive";
 import {LogoComponent} from "../logo/logo.component";
 import {NotificationIconComponent} from "../notification-icon/notification-icon.component";
+import {UserNotificationsComponent} from "../user-notifications/user-notifications.component";
 
 @Component({
   selector: 'app-nav-bar',
@@ -39,6 +40,7 @@ import {NotificationIconComponent} from "../notification-icon/notification-icon.
     FocusDirective,
     LogoComponent,
     NotificationIconComponent,
+    UserNotificationsComponent,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
