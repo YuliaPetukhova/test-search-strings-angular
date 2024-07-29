@@ -15,6 +15,7 @@ import {LogoComponent} from "../logo/logo.component";
 import {NotificationIconComponent} from "../notification-icon/notification-icon.component";
 import {UserNotificationsComponent} from "../user-notifications/user-notifications.component";
 import {AddIconComponent} from "../add-icon/add-icon.component";
+import {MenuListComponent} from "../menu-list/menu-list.component";
 
 @Component({
   selector: 'app-nav-bar',
@@ -43,6 +44,7 @@ import {AddIconComponent} from "../add-icon/add-icon.component";
     NotificationIconComponent,
     UserNotificationsComponent,
     AddIconComponent,
+    MenuListComponent,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',

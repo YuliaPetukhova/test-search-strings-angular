@@ -4,28 +4,7 @@
     <app-logo></app-logo>
 
     <nav class="menu">
-      <ul class="menu-list">
-        <li class="menu-item desktop-only">
-          <img src="assets/images/link.png" alt="link">
-          <p>Ссылки</p>
-        </li>
-        <li class="menu-item desktop-only">
-          <img src="assets/images/users.png" alt="users">
-          <p>Контакты</p>
-        </li>
-        <li class="menu-item desktop-only">
-          <img src="assets/images/Union.png" alt="Union">
-          <p>Теги</p>
-        </li>
-        <li class="menu-item desktop-only">
-          <img src="assets/images/fav.png" alt="fav">
-          <p>Избранное</p>
-        </li>
-        <li class="menu-item">
-          <img src="assets/images/history.png" alt="history">
-          <p class="desktop-only">Посещения</p>
-        </li>
-      </ul>
+      <app-menu-list></app-menu-list>
 
       <div class="search-add" appFocus (clickOutside)="closeSearch()">
         <form class="search-form-main">
@@ -101,7 +80,6 @@
       <div class="notification-mobile">
         <app-notification-icon></app-notification-icon>
       </div>
-
     </nav>
 
     <app-user-notifications></app-user-notifications>
