@@ -1,0 +1,14 @@
+.add-new {
+  padding-left: 16px;
+}
+
+.add-new img {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 414px) {
+  .add-new {
+    padding: 0 12px;
+    height: 24px;
+  }
+}

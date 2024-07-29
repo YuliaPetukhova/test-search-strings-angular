@@ -142,13 +142,13 @@ header {
   cursor: pointer;
 }
 
-.add-new {
-  padding-left: 16px;
-}
+/*.add-new {*/
+/*  padding-left: 16px;*/
+/*}*/
 
-.add-new img {
-  cursor: pointer;
-}
+/*.add-new img {*/
+/*  cursor: pointer;*/
+/*}*/
 
 /*.right {*/
 /*  display: flex;*/
@@ -329,10 +329,10 @@ header {
     margin: 0;
   }
 
-  .add-new {
-    padding: 0 12px;
-    height: 24px;
-  }
+  /*.add-new {*/
+  /*  padding: 0 12px;*/
+  /*  height: 24px;*/
+  /*}*/
 
   .search-add {
     flex-direction: row;

@@ -14,6 +14,7 @@ import {FocusDirective} from "../../directives/focus.directive";
 import {LogoComponent} from "../logo/logo.component";
 import {NotificationIconComponent} from "../notification-icon/notification-icon.component";
 import {UserNotificationsComponent} from "../user-notifications/user-notifications.component";
+import {AddIconComponent} from "../add-icon/add-icon.component";
 
 @Component({
   selector: 'app-nav-bar',
@@ -41,6 +42,7 @@ import {UserNotificationsComponent} from "../user-notifications/user-notificatio
     LogoComponent,
     NotificationIconComponent,
     UserNotificationsComponent,
+    AddIconComponent,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
