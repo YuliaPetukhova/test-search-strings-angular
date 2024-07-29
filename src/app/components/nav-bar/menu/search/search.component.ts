@@ -8,6 +8,8 @@ import {MatIcon} from "@angular/material/icon";
 import {MatInput} from "@angular/material/input";
 import {NgClass, NgForOf} from "@angular/common";
 import {map, Observable, startWith} from "rxjs";
+import {SearchInputComponent} from "./search-input/search-input.component";
+import {SearchCategoryComponent} from "./search-category/search-category.component";
 
 @Component({
   selector: 'app-search',
@@ -26,7 +28,9 @@ import {map, Observable, startWith} from "rxjs";
     MatSuffix,
     NgForOf,
     ReactiveFormsModule,
-    NgClass
+    NgClass,
+    SearchInputComponent,
+    SearchCategoryComponent
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
@@ -36,27 +40,6 @@ export class SearchComponent implements OnInit {
 
   options: string[] = ['One', 'Two', 'Three'];
   searchControl = new FormControl();
-
-  filters = [
-    {name: 'Я участник', checked: false},
-    {name: 'Строгий поиск', checked: false},
-    {name: 'В заголовках', checked: false},
-  ];
-
-  filtersOnly = [
-    {name: 'теги', checked: false},
-    {name: 'просьбы', checked: false},
-    {name: 'контакты', checked: false},
-  ];
-
-  wordsSearch = [
-    {wordName: 'приложение'},
-    {wordName: 'кнопка'},
-    {wordName: 'кнопка-приложение'},
-    {wordName: 'приложение'},
-    {wordName: 'кнопка'},
-    {wordName: 'кнопка-приложение'},
-  ];
 
   filteredOptions!: Observable<string[]>;
 

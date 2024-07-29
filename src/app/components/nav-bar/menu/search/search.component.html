@@ -29,37 +29,7 @@
           {{ option }}
         </mat-option>
 
-        <div class="form-search-category">
-          <div class="history desktop-only">
-            <p class="title-history">История</p>
-            <div class="title-search" *ngFor="let word of wordsSearch">{{ word.wordName }}</div>
-          </div>
-
-          <div class="options">
-            <mat-form-field class="input-name" appearance="outline">
-              <mat-label class="author">Автор</mat-label>
-              <input matInput class="input-name-job-title" placeholder="Имя или должность" name="user">
-              <mat-icon matSuffix>account_box</mat-icon>
-            </mat-form-field>
-
-            <div>
-              <mat-checkbox
-                name="checkbox1" *ngFor="let filter of filters"
-                [(ngModel)]="filter.checked"
-                class="first-checkbox"
-              >
-                {{ filter.name }}
-              </mat-checkbox>
-            </div>
-
-            <div class="only-checkbox">
-              <div class="only-title">Только</div>
-              <mat-checkbox name="category" *ngFor="let filter of filtersOnly"
-                            [(ngModel)]="filter.checked">{{ filter.name }}
-              </mat-checkbox>
-            </div>
-          </div>
-        </div>
+        <app-search-category></app-search-category>
       </mat-autocomplete>
 
     </div>

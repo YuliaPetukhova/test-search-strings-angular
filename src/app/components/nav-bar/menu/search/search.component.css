@@ -1,16 +1,7 @@
-
 .search-add {
   display: flex;
   align-items: center;
   padding: 0;
-}
-
-.search {
-  display: flex;
-  align-items: center;
-  height: 47px;
-  align-content: flex-start;
-  justify-content: flex-end;
 }
 
 .search-form-main {
@@ -21,6 +12,14 @@
   margin: 0;
   padding: 19px 0 0 0;
   right: 416px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 47px;
+  align-content: flex-start;
+  justify-content: flex-end;
 }
 
 .search-input {
@@ -43,10 +42,6 @@
   padding-left: 16px;
 }
 
-.search-btn {
-  margin-left: 10px;
-}
-
 :host ::ng-deep .mdc-text-field {
   padding: 0;
 }
@@ -55,21 +50,12 @@
   padding: 0;
 }
 
-.form-search-category {
-  display: flex;
-  justify-content: space-around;
-}
-
 .mat-mdc-form-field {
   padding: 0;
 }
 
-.search img {
-  padding: 0 16px;
-  cursor: pointer;
-}
-
 .search-btn {
+  margin-left: 10px;
   background-color: #ffb700;
   color: white;
   border: #ffb700;
@@ -79,103 +65,8 @@
   cursor: pointer;
 }
 
-
-.form-search-category {
-  display: flex;
-  width: max-content;
-  margin: 0;
-  position: relative;
-  background-color: #ffffff;
-}
-
-.history {
-  width: 216px;
-  height: 200px;
-  padding: 20px 16px 0 16px;
-  overflow: hidden;
-  overflow-y: scroll;
-  border-right: 1px solid #E1E4E6;
-  scrollbar-width: none;
-}
-
-.history p {
-  margin: 8px 0;
-}
-
-.form-search-category:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 464px);
-  height: 25%;
-  background: linear-gradient(transparent, rgba(255, 255, 255, 0.98));
-  pointer-events: none;
-}
-
-.input-name {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  width: 439px;
-}
-
-.only-title {
-  color: black;
-  padding-bottom: 4px;
-}
-
-.only-checkbox {
-  padding-top: 20px;
-  padding-bottom: 24px;
-  color: #2A3033;
-}
-
 .hidden-option {
   display: none;
-}
-
-:host ::ng-deep .mdc-checkbox {
-  border-color: #7F878C;
-}
-
-:host ::ng-deep div.mat-mdc-autocomplete-panel {
-  padding: 0;
-}
-
-.options {
-  padding: 24px 0 0 24px;
-}
-
-::ng-deep .mat-mdc-autocomplete-panel {
-  padding: 0 !important;
-  border-radius: 4px !important;
-  background-color: #ffffff !important;
-}
-
-.title-history {
-  font-size: 11px;
-  color: #7F878C;
-}
-
-.title-search {
-  padding-bottom: 12px;
-  color: #2A3033;
-  font-size: 14px;
-}
-
-.author {
-  color: #8C9499;
-  font-size: 16px;
-}
-
-.input-name-job-title {
-  color: #9AA1A6;
-  font-size: 14px;
-}
-
-:host ::ng-deep .mat-mdc-text-field-wrapper {
-  border-radius: 4px;
 }
 
 .arrow-back {
@@ -189,11 +80,6 @@
 .cancel-search {
   display: none;
 }
-
-:host ::ng-deep .mdc-text-field--no-label .mat-mdc-form-field-infix {
-  background-color: #ffffff;
-}
-
 
 @media screen and (max-width: 414px) {
   .desktop-only {
@@ -232,16 +118,6 @@
     padding: 24px 14px 0 14px;
   }
 
-  .mat-mdc-checkbox {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .input-name {
-    width: 382px;
-  }
-
-
   .arrow-back {
     display: inline-block;
     padding: 16px 12px 16px 0;
@@ -256,25 +132,5 @@
   .cancel-search {
     display: inline-block;
     color: #7F878C;
-  }
-
-  :host ::ng-deep .mdc-text-field--no-label .mat-mdc-form-field-infix {
-    background-color: #ffffff;
-  }
-
-  .form-search-category {
-    background-color: #F5F5F5;
-  }
-
-  .mat-mdc-form-field {
-    background-color: #F5F5F5;
-  }
-
-  /deep/ div.mat-mdc-autocomplete-panel {
-    max-height: 450px !important;
-  }
-
-  /deep/ .mdc-line-ripple {
-    display: none;
   }
 }
