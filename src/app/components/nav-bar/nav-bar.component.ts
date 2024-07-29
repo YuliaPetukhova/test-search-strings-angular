@@ -11,6 +11,8 @@ import {MatSelect} from "@angular/material/select";
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
 import {FocusDirective} from "../../directives/focus.directive";
+import {LogoComponent} from "../logo/logo.component";
+import {NotificationIconComponent} from "../notification-icon/notification-icon.component";
 
 @Component({
   selector: 'app-nav-bar',
@@ -35,6 +37,8 @@ import {FocusDirective} from "../../directives/focus.directive";
     MatMenu,
     MatMenuTrigger,
     FocusDirective,
+    LogoComponent,
+    NotificationIconComponent,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',

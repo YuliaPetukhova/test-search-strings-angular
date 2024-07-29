@@ -1,0 +1,10 @@
+.custom-badge {
+  position: relative;
+}
+
+:host ::ng-deep .mat-badge-content {
+  background-color: #CC1910;
+  color: white;
+  margin: 0;
+  padding: 0;
+}

@@ -1,12 +1,7 @@
 <header>
   <div class="container">
 
-    <div class="logo">
-      <div class="menu-mobile">
-        <mat-icon>menu</mat-icon>
-      </div>
-      <img src="assets/images/Logo.png" alt="Logo">
-    </div>
+    <app-logo></app-logo>
 
     <nav class="menu">
       <ul class="menu-list">
@@ -106,18 +101,14 @@
       </div>
 
       <div class="notification-mobile">
-        <mat-icon matBadge="32" class="custom-badge">
-          <img src="assets/images/notification.png" alt="notification">
-        </mat-icon>
+        <app-notification-icon></app-notification-icon>
       </div>
 
     </nav>
 
     <div class="right">
       <div class="notification desktop-only">
-        <mat-icon matBadge="32" class="custom-badge">
-          <img src="assets/images/notification.png" alt="notification">
-        </mat-icon>
+        <app-notification-icon></app-notification-icon>
       </div>
 
       <div class="user desktop-only">

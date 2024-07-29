@@ -1,0 +1,30 @@
+.menu-mobile {
+  display: none;
+}
+
+.logo {
+  display: block;
+  vertical-align: bottom;
+  padding-left: 16px;
+}
+
+
+@media screen and (max-width: 414px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .logo {
+    display: flex;
+    margin: 0 28px 0 0;
+    align-items: center;
+  }
+
+  .menu-mobile {
+    display: flex;
+    color: white;
+    background-color: #1074CC;
+    cursor: pointer;
+    padding-right: 16px;
+  }
+}

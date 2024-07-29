@@ -17,15 +17,15 @@ header {
   align-content: center;
 }
 
-.menu-mobile {
-  display: none;
-}
+/*.menu-mobile {*/
+/*  display: none;*/
+/*}*/
 
-.logo {
-  display: block;
-  vertical-align: bottom;
-  padding-left: 16px;
-}
+/*.logo {*/
+/*  display: block;*/
+/*  vertical-align: bottom;*/
+/*  padding-left: 16px;*/
+/*}*/
 
 .menu {
   margin-left: 0;
